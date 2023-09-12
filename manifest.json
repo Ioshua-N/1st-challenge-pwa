@@ -13,12 +13,7 @@
     "education"
   ],
   "screenshots": [],
-  "icons": [
-    {
-      "src": "images/continentes.gif",
-      "type": "image/gif",
-      "sizes": "200x160"
-    },  
+  "icons": [  
     {
       "src": "windows11/SmallTile.scale-100.png",
       "sizes": "71x71"
