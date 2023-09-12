@@ -9,7 +9,9 @@
   "short_name": "Predadores",
   "start_url": "/",
   "theme_color": "#ffffff",
-  "categories": [],
+  "categories": [
+    "education"
+  ],
   "screenshots": [],
   "icons": [
     {
