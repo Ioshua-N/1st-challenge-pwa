@@ -10,6 +10,7 @@ if ("geolocation" in navigator) {
         
         // Após receber as coordenadas, chama a função para inicializar o mapa
         initMap();
+        readJSON();
     });
 } else {
     // Problema na localização
@@ -41,4 +42,18 @@ function initMap() {
     } else {
         alert("Latitude e/ou longitude não definidas.");
     }
+}
+
+function readJSON()
+{
+    fetch('academiadacidade.json')
+        .then(response => response.json())
+        .then(data => 
+            {
+                console.log(data);
+            })
+        .catch(error => 
+            {
+                console.error('Erro ao buscar dados:', error);
+            });
 }
