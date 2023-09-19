@@ -57,30 +57,27 @@ function initMap()
     }
 }
 
-function readJSON() 
+function readJSON()
 {
     fetch('academiadacidade.json')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(element => {
-                // Create a LatLng object with the coordinates
-                const coordenadas = new google.maps.LatLng(element.latitude, element.longitude);
+    .then(response => response.json())
+    .then(data => 
+    {
+        data.forEach(element => 
+        {
+            // Cria um objeto LatLng com as coordenadas
+            coordenadas = new google.maps.LatLng(data.getElementById('latitude'), data.getElementById('longitude'));
 
-                // Create a marker
-                const marker = new google.maps.Marker({
-                    position: coordenadas,
-                    map: map, // Make sure 'map' is defined in your code
-                    title: element.nome_oficial
-                });
-
-                // Optionally, you can add an event listener to the marker
-                marker.addListener('click', () => {
-                    // Handle marker click event here
-                    console.log(`Marker clicked: ${element.nome_oficial}`);
-                });
-            });
-        })
-        .catch(error => {
-            console.error('Erro ao buscar dados:', error);
+            marker = new google.maps.Marker(
+            {
+                position: coordenadas,
+                map: map,
+                title: data.getElementById('nome_oficial')
+            })
         });
+    })
+    .catch(error => 
+    {
+        console.error('Erro ao buscar dados:', error);
+    });
 }
